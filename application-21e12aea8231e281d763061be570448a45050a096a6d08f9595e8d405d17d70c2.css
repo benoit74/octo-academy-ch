@@ -10063,6 +10063,9 @@ footer .bottom .legalities a:hover {
     margin-top: 0.9375rem;
     padding-left: 3.125rem
 }
+#home #fresh-courses-and-quotes .courses ul li a.grayed {
+    opacity: 0.5;
+}
 @media only screen and (max-width: 40em) {
     #home #fresh-courses-and-quotes .courses ul li a {
         line-height: 1

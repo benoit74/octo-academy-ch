@@ -8,9 +8,31 @@
   <link href="favicon-4f375e54274d139e8142872a24b369e091777352ad53a820a9863c3cd671d8ae.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
   <link href="application-21e12aea8231e281d763061be570448a45050a096a6d08f9595e8d405d17d70c2.css" media="screen" rel="stylesheet"/>
   <script src="modernizr-8930220bcb710b239a9d4f592dd8d69ac02ed88ca245dc1a59caa99aaa6ec6ed.js"></script>
+  <script src="moment-98f8437fb39046129937348b02c2e758ce021b07e2874e7694058ef2487d8818.js"></script>
   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-64012919-4', 'auto');  ga('send', 'pageview');</script>
+  <script>
+    $(function() {
+      var container = $('#home #fresh-courses-and-quotes .courses ul'),
+      courses = $('#home #fresh-courses-and-quotes .courses ul li a'),
+      scrollTo = undefined;
+
+      courses.each(function() {
+        var course = $(this);
+        if (moment().isAfter(course.attr("data-date"))) {
+          course.addClass("grayed")
+        } else if (scrollTo == undefined) {
+          scrollTo = course
+        }
+      });
+      console.log(courses.size())
+        var str = scrollTo.clone().wrap('<div/>').parent().html();
+        container.animate({
+            scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
+        });
+    });
+  </script>
 
 <style type="text/css">
   #home #offers div article#domain-3 header h2 {
@@ -81,409 +103,410 @@
         <div class="courses">
           <header>FORMATIONS INTER-ENTREPRISES</header>
           <ul>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AGIMA" href="http://www.octo.academy/fr/formation/5-decouvrir-les-demarches-agiles-et-la-culture-agile">
-                      <div class="date">
-                        <div class="day">09</div>
-                        <div class="month">jan.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Découvrir les démarches agiles & la culture agile</div>
-                        <div class="domain">Agile & Lean</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SLGDW" href="http://www.octo.academy/fr/formation/34-les-geants-du-web">
-                      <div class="date">
-                        <div class="day">19</div>
-                        <div class="month">jan.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Les Géants du Web : Culture - Pratiques - Architecture</div>
-                        <div class="domain">Stratégie Digitale</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="DSFDX" href="http://www.octo.academy/fr/formation/13-fondamentaux-de-la-data-science">
-                      <div class="date">
-                        <div class="day">30</div>
-                        <div class="month">jan.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Les fondamentaux de la Data Science</div>
-                        <div class="domain">Big Data/Data Science</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SDEVO" href="http://www.octo.academy/fr/f/43-devops-fondamentaux-retours-d-experience">
-                      <div class="date">
-                        <div class="day">06</div>
-                        <div class="month">fév.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">DevOps : fondamentaux & retours d’expérience</div>
-                        <div class="domain">Architectures du SI</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="TDD01" href="http://www.octo.academy/fr/formation/37-qualite-des-developpements-avec-test-driven-development">
-                      <div class="date">
-                        <div class="day">27</div>
-                        <div class="month">fév.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Qualité des développements avec Test Driven Development : optimiser son développement logiciel par les tests</div>
-                        <div class="domain">Craftsmanship</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="DSNVA" href="http://www.octo.academy/fr/formation/91-data-science-niveau-avance">
-                      <div class="date">
-                        <div class="day">27</div>
-                        <div class="month">fév.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Data Science : niveau avancé</div>
-                        <div class="domain">Big Data/Hadoop</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AGSPO" href="http://www.octo.academy/fr/formation/12-le-role-de-product-owner-en-pratique">
-                      <div class="date">
-                        <div class="day">06</div>
-                        <div class="month">mar.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Le rôle de Product Owner en pratique</div>
-                        <div class="domain">Agile & Lean</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AWS01" href="http://www.octo.academy/fr/formation/99-aws-architecture-sur-amazon-web-services">
-                      <div class="date">
-                        <div class="day">15</div>
-                        <div class="month">mar.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">AWS:  Architecture sur Amazon Web Services</div>
-                        <div class="domain">Architectures du SI</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HWADM" href="http://www.octo.academy/fr/formation/8-administrer-la-plateforme-hadoop-2-x-hortonworks-niveau-1">
-                      <div class="date">
-                        <div class="day">27</div>
-                        <div class="month">mar.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Administrer la plateforme Hadoop 2.X Hortonworks : niveau 1</div>
-                        <div class="domain">Big Data/Hadoop</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HDP01" href="http://www.octo.academy/fr/formation/9-les-fondamentaux-d-hadoop">
-                      <div class="date">
-                        <div class="day">06</div>
-                        <div class="month">avr.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Les fondamentaux d'Hadoop</div>
-                        <div class="domain">Big Data/Hadoop</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SAPI1" href="http://www.octo.academy/fr/formation/39-api-ouvrir-son-si-et-developper-son-modele-d-affaires">
-                      <div class="date">
-                        <div class="day">24</div>
-                        <div class="month">avr.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">API : ouvrir son SI & développer son modèle d’affaire</div>
-                        <div class="domain">Architectures du SI</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HWSPK" href="http://www.octo.academy/fr/formation/89-developper-des-applications-pour-apache-spark-avec-python-ou-scala">
-                      <div class="date">
-                        <div class="day">02</div>
-                        <div class="month">mai.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Développer des applications pour Apache Spark avec Python ou Scala</div>
-                        <div class="domain">Big Data/Hadoop</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AGCOA" href="http://www.octo.academy/fr/formation/75-devenir-coach-agile-ou-scrum-master">
-                      <div class="date">
-                        <div class="day">04</div>
-                        <div class="month">mai.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Devenir Coach Agile ou Scrum Master</div>
-                        <div class="domain">Agile & Lean</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HWAPH" href="http://www.octo.academy/fr/formation/1-analyse-de-donnees-pour-hadoop-2-x-hortonworks-avec-pig-hive-et-spark">
-                      <div class="date">
-                        <div class="day">15</div>
-                        <div class="month">mai.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Analyse de données pour Hadoop 2.X Hortonworks avec Pig, Hive et Spark</div>
-                        <div class="domain">Big Data/Hadoop</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SADSI" href="http://www.octo.academy/fr/formation/68-nouvelles-architectures-des-si">
-                      <div class="date">
-                        <div class="day">29</div>
-                        <div class="month">mai.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Nouvelles architectures des SI</div>
-                        <div class="domain">Architectures du SI</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AGIMA" href="http://www.octo.academy/fr/formation/5-decouvrir-les-demarches-agiles-et-la-culture-agile">
-                      <div class="date">
-                        <div class="day">08</div>
-                        <div class="month">jui.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Découvrir les démarches agiles & la culture agile</div>
-                        <div class="domain">Agile & Lean</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SLGDW" href="http://www.octo.academy/fr/formation/34-les-geants-du-web">
-                      <div class="date">
-                        <div class="day">26</div>
-                        <div class="month">jui.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Les Géants du Web : Culture - Pratiques - Architecture</div>
-                        <div class="domain">Stratégie Digitale</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="DSFDX" href="http://www.octo.academy/fr/formation/13-fondamentaux-de-la-data-science">
-                      <div class="date">
-                        <div class="day">04</div>
-                        <div class="month">sep.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Les fondamentaux de la Data Science</div>
-                        <div class="domain">Big Data/Data Science</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HWADS" href="http://www.octo.academy/fr/formation/96-administrer-la-plateforme-hadoop-2-x-hortonworks-securite">
-                      <div class="date">
-                        <div class="day">04</div>
-                        <div class="month">sep.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Administrer la plateforme Hadoop 2.X Hortonworks : sécurité</div>
-                        <div class="domain">Big Data/Data Science</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SDEVO" href="http://www.octo.academy/fr/f/43-devops-fondamentaux-retours-d-experience">
-                      <div class="date">
-                        <div class="day">15</div>
-                        <div class="month">sep.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">DevOps : fondamentaux & retours d’expérience</div>
-                        <div class="domain">Architectures du SI</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="TDD01" href="http://www.octo.academy/fr/formation/37-qualite-des-developpements-avec-test-driven-development">
-                      <div class="date">
-                        <div class="day">25</div>
-                        <div class="month">sep.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Qualité des développements avec Test Driven Development : optimiser son développement logiciel par les tests</div>
-                        <div class="domain">Craftsmanship</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="DSNVA" href="http://www.octo.academy/fr/formation/91-data-science-niveau-avance">
-                      <div class="date">
-                        <div class="day">25</div>
-                        <div class="month">sep.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Data Science : niveau avancé</div>
-                        <div class="domain">Big Data/Data Science</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AGSPO" href="http://www.octo.academy/fr/formation/12-le-role-de-product-owner-en-pratique">
-                      <div class="date">
-                        <div class="day">05</div>
-                        <div class="month">oct.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Le rôle de Product Owner en pratique</div>
-                        <div class="domain">Agile & Lean</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AWS01" href="http://www.octo.academy/fr/formation/99-aws-architecture-sur-amazon-web-services">
-                      <div class="date">
-                        <div class="day">23</div>
-                        <div class="month">oct.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">AWS:  Architecture sur Amazon Web Services</div>
-                        <div class="domain">Architectures du SI</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HWADM" href="http://www.octo.academy/fr/formation/8-administrer-la-plateforme-hadoop-2-x-hortonworks-niveau-1">
-                      <div class="date">
-                        <div class="day">06</div>
-                        <div class="month">nov.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Administrer la plateforme Hadoop 2.X Hortonworks : niveau 1</div>
-                        <div class="domain">Big Data/Hadoop</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HDP01" href="http://www.octo.academy/fr/formation/9-les-fondamentaux-d-hadoop">
-                      <div class="date">
-                        <div class="day">16</div>
-                        <div class="month">nov.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Les fondamentaux d'Hadoop</div>
-                        <div class="domain">Big Data/Hadoop</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SAPI1" href="http://www.octo.academy/fr/formation/39-api-ouvrir-son-si-et-developper-son-modele-d-affaires">
-                      <div class="date">
-                        <div class="day">27</div>
-                        <div class="month">nov.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">API : ouvrir son SI & développer son modèle d’affaire</div>
-                        <div class="domain">Architectures du SI</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AGCOA" href="http://www.octo.academy/fr/formation/75-devenir-coach-agile-ou-scrum-master">
-                      <div class="date">
-                        <div class="day">04</div>
-                        <div class="month">déc.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Devenir Coach Agile ou Scrum Master</div>
-                        <div class="domain">Agile & Lean</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HWSPK" href="http://www.octo.academy/fr/formation/89-developper-des-applications-pour-apache-spark-avec-python-ou-scala">
-                      <div class="date">
-                        <div class="day">04</div>
-                        <div class="month">déc.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Développer des applications pour Apache Spark avec Python ou Scala</div>
-                        <div class="domain">Big Data/Hadoop</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HWAPH" href="http://www.octo.academy/fr/formation/1-analyse-de-donnees-pour-hadoop-2-x-hortonworks-avec-pig-hive-et-spark">
-                      <div class="date">
-                        <div class="day">12</div>
-                        <div class="month">déc.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Analyse de données pour Hadoop 2.X Hortonworks avec Pig, Hive et Spark</div>
-                        <div class="domain">Big Data/Hadoop</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SADSI" href="http://www.octo.academy/fr/formation/68-nouvelles-architectures-des-si">
-                      <div class="date">
-                        <div class="day">18</div>
-                        <div class="month">déc.</div>
-                      </div>
-                      <div class="details">
-                        <div class="training">Nouvelles architectures des SI</div>
-                        <div class="domain">Architectures du SI</div>
-                        <div class="more"><span>plus d&#39;infos</span></div>
-                      </div>
-                    </a>
-                  </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AGIMA" data-date="2017-01-09" href="http://www.octo.academy/fr/formation/5-decouvrir-les-demarches-agiles-et-la-culture-agile">
+                <div class="date">
+                  <div class="day">09</div>
+                  <div class="month">jan.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Découvrir les démarches agiles & la culture agile</div>
+                  <div class="domain">Agile & Lean</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SLGDW" data-date="2017-01-19" href="http://www.octo.academy/fr/formation/34-les-geants-du-web">
+                <div class="date">
+                  <div class="day">19</div>
+                  <div class="month">jan.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Les Géants du Web : Culture - Pratiques - Architecture</div>
+                  <div class="domain">Stratégie Digitale</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="DSFDX" data-date="2017-01-30" href="http://www.octo.academy/fr/formation/13-fondamentaux-de-la-data-science">
+                <div class="date">
+                  <div class="day">30</div>
+                  <div class="month">jan.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Les fondamentaux de la Data Science</div>
+                  <div class="domain">Big Data/Data Science</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SDEVO" data-date="2017-02-06" href="http://www.octo.academy/fr/f/43-devops-fondamentaux-retours-d-experience">
+                <div class="date">
+                  <div class="day">06</div>
+                  <div class="month">fév.</div>
+                </div>
+                <div class="details">
+                  <div class="training">DevOps : fondamentaux & retours d’expérience</div>
+                  <div class="domain">Architectures du SI</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="TDD01" data-date="2017-02-27" href="http://www.octo.academy/fr/formation/37-qualite-des-developpements-avec-test-driven-development">
+                <div class="date">
+                  <div class="day">27</div>
+                  <div class="month">fév.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Qualité des développements avec Test Driven Development : optimiser son développement logiciel par les tests</div>
+                  <div class="domain">Craftsmanship</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="DSNVA" data-date="2017-02-27" href="http://www.octo.academy/fr/formation/91-data-science-niveau-avance">
+                <div class="date">
+                  <div class="day">27</div>
+                  <div class="month">fév.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Data Science : niveau avancé</div>
+                  <div class="domain">Big Data/Hadoop</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AGSPO" data-date="2017-03-06" href="http://www.octo.academy/fr/formation/12-le-role-de-product-owner-en-pratique">
+                <div class="date">
+                  <div class="day">06</div>
+                  <div class="month">mar.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Le rôle de Product Owner en pratique</div>
+                  <div class="domain">Agile & Lean</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AWS01" data-date="2017-03-15" href="http://www.octo.academy/fr/formation/99-aws-architecture-sur-amazon-web-services">
+                <div class="date">
+                  <div class="day">15</div>
+                  <div class="month">mar.</div>
+                </div>
+                <div class="details">
+                  <div class="training">AWS:  Architecture sur Amazon Web Services</div>
+                  <div class="domain">Architectures du SI</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HWADM" data-date="2017-03-27" href="http://www.octo.academy/fr/formation/8-administrer-la-plateforme-hadoop-2-x-hortonworks-niveau-1">
+                <div class="date">
+                  <div class="day">27</div>
+                  <div class="month">mar.</div>
+                </div>
+                <div class="details">
+                  <div class="training"> Administrer la plateforme Hadoop 2.X Hortonworks : niveau 1</div>
+                  <div class="domain">Big Data/Hadoop</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HDP01" data-date="2017-04-06" href="http://www.octo.academy/fr/formation/9-les-fondamentaux-d-hadoop">
+                <div class="date">
+                  <div class="day">06</div>
+                  <div class="month">avr.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Les fondamentaux d'Hadoop</div>
+                  <div class="domain">Big Data/Hadoop</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SAPI1" data-date="2017-04-24" href="http://www.octo.academy/fr/formation/39-api-ouvrir-son-si-et-developper-son-modele-d-affaires">
+                <div class="date">
+                  <div class="day">24</div>
+                  <div class="month">avr.</div>
+                </div>
+                <div class="details">
+                  <div class="training">API : ouvrir son SI & développer son modèle d’affaire</div>
+                  <div class="domain">Architectures du SI</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HWSPK" data-date="2017-05-02" href="http://www.octo.academy/fr/formation/89-developper-des-applications-pour-apache-spark-avec-python-ou-scala">
+                <div class="date">
+                  <div class="day">02</div>
+                  <div class="month">mai.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Développer des applications pour Apache Spark avec Python ou Scala</div>
+                  <div class="domain">Big Data/Hadoop</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AGCOA" data-date="2017-05-04" href="http://www.octo.academy/fr/formation/75-devenir-coach-agile-ou-scrum-master">
+                <div class="date">
+                  <div class="day">04</div>
+                  <div class="month">mai.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Devenir Coach Agile ou Scrum Master</div>
+                  <div class="domain">Agile & Lean</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HWAPH" data-date="2017-05-15" href="http://www.octo.academy/fr/formation/1-analyse-de-donnees-pour-hadoop-2-x-hortonworks-avec-pig-hive-et-spark">
+                <div class="date">
+                  <div class="day">15</div>
+                  <div class="month">mai.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Analyse de données pour Hadoop 2.X Hortonworks avec Pig, Hive et Spark</div>
+                  <div class="domain">Big Data/Hadoop</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SADSI" data-date="2017-05-29" href="http://www.octo.academy/fr/formation/68-nouvelles-architectures-des-si">
+                <div class="date">
+                  <div class="day">29</div>
+                  <div class="month">mai.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Nouvelles architectures des SI</div>
+                  <div class="domain">Architectures du SI</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AGIMA" data-date="2017-06-08" href="http://www.octo.academy/fr/formation/5-decouvrir-les-demarches-agiles-et-la-culture-agile">
+                <div class="date">
+                  <div class="day">08</div>
+                  <div class="month">jui.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Découvrir les démarches agiles & la culture agile</div>
+                  <div class="domain">Agile & Lean</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SLGDW" data-date="2017-06-26" href="http://www.octo.academy/fr/formation/34-les-geants-du-web">
+                <div class="date">
+                  <div class="day">26</div>
+                  <div class="month">jui.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Les Géants du Web : Culture - Pratiques - Architecture</div>
+                  <div class="domain">Stratégie Digitale</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="DSFDX" data-date="2017-09-04" href="http://www.octo.academy/fr/formation/13-fondamentaux-de-la-data-science">
+                <div class="date">
+                  <div class="day">04</div>
+                  <div class="month">sep.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Les fondamentaux de la Data Science</div>
+                  <div class="domain">Big Data/Data Science</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HWADS" data-date="2017-09-04" href="http://www.octo.academy/fr/formation/96-administrer-la-plateforme-hadoop-2-x-hortonworks-securite">
+                <div class="date">
+                  <div class="day">04</div>
+                  <div class="month">sep.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Administrer la plateforme Hadoop 2.X Hortonworks : sécurité</div>
+                  <div class="domain">Big Data/Data Science</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SDEVO" data-date="2017-09-15" href="http://www.octo.academy/fr/f/43-devops-fondamentaux-retours-d-experience">
+                <div class="date">
+                  <div class="day">15</div>
+                  <div class="month">sep.</div>
+                </div>
+                <div class="details">
+                  <div class="training">DevOps : fondamentaux & retours d’expérience</div>
+                  <div class="domain">Architectures du SI</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="TDD01" data-date="2017-09-25" href="http://www.octo.academy/fr/formation/37-qualite-des-developpements-avec-test-driven-development">
+                <div class="date">
+                  <div class="day">25</div>
+                  <div class="month">sep.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Qualité des développements avec Test Driven Development : optimiser son développement logiciel par les tests</div>
+                  <div class="domain">Craftsmanship</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="DSNVA" data-date="2017-09-25" href="http://www.octo.academy/fr/formation/91-data-science-niveau-avance">
+                <div class="date">
+                  <div class="day">25</div>
+                  <div class="month">sep.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Data Science : niveau avancé</div>
+                  <div class="domain">Big Data/Data Science</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AGSPO" data-date="2017-10-05" href="http://www.octo.academy/fr/formation/12-le-role-de-product-owner-en-pratique">
+                <div class="date">
+                  <div class="day">05</div>
+                  <div class="month">oct.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Le rôle de Product Owner en pratique</div>
+                  <div class="domain">Agile & Lean</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AWS01" data-date="2017-10-23" href="http://www.octo.academy/fr/formation/99-aws-architecture-sur-amazon-web-services">
+                <div class="date">
+                  <div class="day">23</div>
+                  <div class="month">oct.</div>
+                </div>
+                <div class="details">
+                  <div class="training">AWS:  Architecture sur Amazon Web Services</div>
+                  <div class="domain">Architectures du SI</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HWADM" data-date="2017-11-06" href="http://www.octo.academy/fr/formation/8-administrer-la-plateforme-hadoop-2-x-hortonworks-niveau-1">
+                <div class="date">
+                  <div class="day">06</div>
+                  <div class="month">nov.</div>
+                </div>
+                <div class="details">
+                  <div class="training"> Administrer la plateforme Hadoop 2.X Hortonworks : niveau 1</div>
+                  <div class="domain">Big Data/Hadoop</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HDP01" data-date="2017-11-16" href="http://www.octo.academy/fr/formation/9-les-fondamentaux-d-hadoop">
+                <div class="date">
+                  <div class="day">16</div>
+                  <div class="month">nov.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Les fondamentaux d'Hadoop</div>
+                  <div class="domain">Big Data/Hadoop</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SAPI1" data-date="2017-11-27" href="http://www.octo.academy/fr/formation/39-api-ouvrir-son-si-et-developper-son-modele-d-affaires">
+                <div class="date">
+                  <div class="day">27</div>
+                  <div class="month">nov.</div>
+                </div>
+                <div class="details">
+                  <div class="training">API : ouvrir son SI & développer son modèle d’affaire</div>
+                  <div class="domain">Architectures du SI</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="AGCOA" data-date="2017-12-04" href="http://www.octo.academy/fr/formation/75-devenir-coach-agile-ou-scrum-master">
+                <div class="date">
+                  <div class="day">04</div>
+                  <div class="month">déc.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Devenir Coach Agile ou Scrum Master</div>
+                  <div class="domain">Agile & Lean</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HWSPK" data-date="2017-12-04" href="http://www.octo.academy/fr/formation/89-developper-des-applications-pour-apache-spark-avec-python-ou-scala">
+                <div class="date">
+                  <div class="day">04</div>
+                  <div class="month">déc.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Développer des applications pour Apache Spark avec Python ou Scala</div>
+                  <div class="domain">Big Data/Hadoop</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="HWAPH" data-date="2017-12-12" href="http://www.octo.academy/fr/formation/1-analyse-de-donnees-pour-hadoop-2-x-hortonworks-avec-pig-hive-et-spark">
+                <div class="date">
+                  <div class="day">12</div>
+                  <div class="month">déc.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Analyse de données pour Hadoop 2.X Hortonworks avec Pig, Hive et Spark</div>
+                  <div class="domain">Big Data/Hadoop</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a data-analytics-action="click" data-analytics-category="formation" data-analytics-label="SADSI" data-date="2017-12-18" href="http://www.octo.academy/fr/formation/68-nouvelles-architectures-des-si">
+                <div class="date">
+                  <div class="day">18</div>
+                  <div class="month">déc.</div>
+                </div>
+                <div class="details">
+                  <div class="training">Nouvelles architectures des SI</div>
+                  <div class="domain">Architectures du SI</div>
+                  <div class="more"><span>plus d&#39;infos</span></div>
+                </div>
+              </a>
+            </li>
+            
           </ul>
         </div>
         <div class="quotes">
