@@ -30,7 +30,7 @@
         var str = scrollTo.clone().wrap('<div/>').parent().html();
         container.animate({
             scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
-        });
+        }, 'slow');
     });
   </script>
 
